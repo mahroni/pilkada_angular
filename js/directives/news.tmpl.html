@@ -1,0 +1,21 @@
+<div class="inbox"> 
+	<div class="container">
+		<div class="search-bar">
+			<div>
+				<input type="text" class="inbox__search" ng-model="news.search" placeholder="Pencarian">
+			</div>
+		</div>
+		<div style="background: #fff;padding:15px;">
+			<h3>News</h3>
+			<ul class="inbox__list">
+				<li ng-repeat="feed in news.news | filter: news.search ">
+					<div class="inbox__list-info">
+						<h4 style="color: #1b809e;"> {{ feed.description }} </h4>
+						<div class="inbox__list-from">Lihat videonya {{ feed.link }}</div>
+						<span class="inbox__list-date">Berita tentang: {{ feed.candidate.name }} | Diposkan pada {{ feed.date | date: 'dd MMM yyyy' }} </span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

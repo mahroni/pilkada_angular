@@ -1,0 +1,57 @@
+<!doctype html>
+<html ng-app="MyApp">
+  <head>
+    <meta charset="utf-8">
+    <title>PILKADA</title>
+	<link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+    }
+    </style>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header class="header navbar-fixed-top" role="banner">
+		<div class=" container text-left">
+			<nav class="{{ active }}">
+				<!-- When a link in the menu is clicked, we set the active variable -->
+				<a href="#/paijo" class="home" ng-click="active='home'">Home</a>
+				<a href="#/news" class="news" ng-click="active='news'">News</a>
+				<a href="#/candidates" class="candidates" ng-click="active='candidates'">Kandidat</a>
+				<a href="#/regions" class="regions" ng-click="active='regions'">Kabupaten</a>
+				<a href="#/faq" class="faq" ng-click="active='faq'">Faq</a>
+			</nav>	
+		</div>
+    </header>
+
+    <main class="main" role="main">
+      <div ng-view class="flex"></div>
+    </main>
+
+    <!-- Vendor libraries -->
+    <script src="lib/jquery-v1.11.1.js"></script>
+    <script src="lib/angular-v1.2.22.js"></script>
+    <script src="lib/angular-route-v1.2.22.js"></script>
+    <script src="lib/angular-sanitize-v1.2.22.js"></script>
+    <!-- Application Files -->
+    <script src="js/app.js"></script>
+    <!--<script src="js/controllers/MenuCtrl.js"></script>-->
+    <script src="js/controllers/PaijoCtrl.js"></script>
+    <script src="js/controllers/FaqCtrl.js"></script>
+    <script src="js/controllers/CandidatesCtrl.js"></script>
+    <script src="js/controllers/RegionsCtrl.js"></script>
+    <script src="js/controllers/NewsCtrl.js"></script>
+    <script src="js/factories/PaijoFactory.js"></script>
+    <script src="js/factories/FaqFactory.js"></script>
+    <script src="js/factories/CandidatesFactory.js"></script>
+    <script src="js/factories/RegionsFactory.js"></script>
+    <script src="js/factories/NewsFactory.js"></script>
+    <script src="js/directives/PaijoDrctv.js"></script>
+    <script src="js/directives/FaqDrctv.js"></script>
+    <script src="js/directives/CandidatesDrctv.js"></script>
+    <script src="js/directives/RegionsDrctv.js"></script>
+    <script src="js/directives/NewsDrctv.js"></script>
+  </body>
+</html>

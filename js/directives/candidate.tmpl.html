@@ -1,0 +1,26 @@
+<div class="inbox"> 
+	<div class="container">
+		<div class="search-bar">
+			<div>
+				<input type="text" class="inbox__search" ng-model="candidate.search" placeholder="Pencarian">
+			</div>
+		</div>
+		<div style="background: #fff;padding:15px;">
+			<h4>Daftar Kandidat PILKADA</h4>
+			<table class="table table-hover"> 
+				<thead> 
+					<tr> 
+						<th>#</th> 
+						<th>Nama</th>
+					</tr> 
+				</thead> 
+				<tbody> 
+					<tr ng-repeat="kandidat in candidate.candidates  | filter: candidate.search "> 
+						<td scope="row">{{$index + 1}}</td> 
+						<td>{{ kandidat.name }}</td>
+					</tr> 
+				</tbody> 
+			</table>
+		</div>
+	</div>
+</div>

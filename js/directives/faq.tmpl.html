@@ -1,0 +1,27 @@
+<div class="inbox"> 
+
+	
+	<div class="container">
+		<div class="search-bar">
+			<div>
+				<input type="text" class="inbox__search" ng-model="faq.search" placeholder="Pencarian">
+			</div>
+		</div>
+		<div class="panel panel-default" ng-repeat="y in faq.faqs | filter: faq.search ">
+			<div class="panel-body">
+				<h4><strong>{{ y.relevant_laws_regulations }}</strong></h4>
+				<hr>
+				<p>{{ y.relevant_text }}</p>
+				<br>
+				<p><i>Tag: {{ y.tags }}<i></p>
+			</div>
+			<div class="panel-footer">
+				<p><i><b>Pertanyaan:</b></i></p>
+				{{ y.question_text }}
+				<hr>
+				<p><i><b>Jawab:</b></i></p>
+				{{ y.question_answer }}
+			</div>
+		</div>
+	</div>
+</div>

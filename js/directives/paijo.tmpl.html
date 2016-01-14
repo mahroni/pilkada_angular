@@ -1,0 +1,35 @@
+<div class="inbox"> 
+	<div class="container">
+		<div class="search-bar">
+			<div>
+				<input type="text" class="inbox__search" ng-model="paijo.search" placeholder="Pencarian">
+			</div>
+		</div>
+		<div class="col-md-12 bg-white">
+			<div class="col-md-12">
+				<h2>{{ paijo.title }}</h2>
+			</div>
+			<div ng-repeat="x in paijo.candidates  | filter: paijo.search " class="col-md-6"> 
+				<div class="thumbnail content-candidate">
+					<!--<p class="title text-uppercase text-center">Pasangan Calon Kepala Daerah Provinsi {{ x.provinsi.nama }}</p>-->
+					<p class="title text-uppercase text-center">Provinsi {{ x.provinsi.nama }}</p>
+					<h4 style="margin: 5px 0;" class="text-uppercase text-center">Daerah Pemilihan {{ x.daerah.nama }}</h4>
+					<p class="date text-center">Partai pengusung : {{ x.dukungan }}</p> 
+					<h3 class="text-center"> Nomor urut: {{ x.no_urut }}</h3>
+					<br>
+					<div class="row">
+						<div class="col-sm-6 col-md-6" ng-repeat="y in x.paslon">
+							<div class="thumbnail thumb">
+								<img data-src="holder.js/100%x200" alt="100%x200" style="margin-top: 0;margin-bottom: 0;display: block;" src="img/default_user.png" data-holder-rendered="true">
+								<div class="caption text-center">
+									<h5 class="kandidat">{{ y.nama }}</h5>
+									<p class="date text-center">{{ y.kind }} BUPATI</p> 
+								</div>
+							</div>
+						</div>
+					</div>						
+				</div> 
+			</div>
+		</div>
+	</div>
+</div>
